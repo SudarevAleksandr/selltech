@@ -54,17 +54,6 @@ function useResetCache(data) {
 const ListboxComponent = React.forwardRef(function ListboxComponent(props, ref) {
   const { children, ...other } = props;
 
-  // const itemData =  React.useMemo(() => {
-  //     console.log('ListboxComponent');
-  //     const itemData = [];
-  //     children.forEach((item) => {
-  //         itemData.push(item);
-  //         itemData.push(...(item.children || []));
-  //     })
-  //     return itemData;
-  //   }, [children]);
-
-
   const itemData = [];
   children.forEach((item) => {
     itemData.push(item);
@@ -115,11 +104,6 @@ const ListboxComponent = React.forwardRef(function ListboxComponent(props, ref) 
     </div>
   );
 });
-
-// ListboxComponent.propTypes = {
-//   children: PropTypes.node,
-// };
-
 
 const StyledPopper = styled(Popper)({
   [`& .${autocompleteClasses.listbox}`]: {

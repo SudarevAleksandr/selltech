@@ -49,10 +49,7 @@ const Listbox = styled('ul')(
 );
 
 
-
-
 class CustomAutocomplete extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -71,8 +68,7 @@ class CustomAutocomplete extends React.Component {
     }
     
     onChange = (e) => {
-        this.setState({searchValue: e.target.value});
-        this.setState({filteredList: this.getFilteredList(e.target.value)});
+        this.setState({searchValue: e.target.value, filteredList: this.getFilteredList(e.target.value)});
     }
     
     changeUserItem  = (e) => {
@@ -115,7 +111,6 @@ class CustomAutocomplete extends React.Component {
 
     сustomAutocompleteRef = React.createRef();
 
-
     render() {
       return (
       <div className='CustomAutocomplete'
@@ -155,14 +150,14 @@ class CustomAutocomplete extends React.Component {
                       <Stack className='CustomAutocomplete-footer' spacing={2}>
                           <TextField  sx={{ width: 1 }}  label={this.props.label} variant="outlined" value={this.state.userItem} onChange={this.changeUserItem}/>
                           <Stack direction="row-reverse" spacing={2}> 
-                            <Button variant="contained" onClick={this.addItem}>Add</Button>
+                              <Button variant="contained" onClick={this.addItem}>Add</Button>
                           </Stack>
                       </Stack>
                   </div>
               ) : null}
-      </div>
-    )
-  }
+          </div>
+       )
+    }
 }
 
 

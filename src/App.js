@@ -7,15 +7,15 @@ import CustomAutocomplete from './components/CustomAutocomplete.js';
 import './App.css';
 
 async function getDataFromSelltech(type, f){
-  const reqType = {
-    сompanyRelations: 'applicantIndividualCompanyRelations',
-    сompanyPositions: 'applicantIndividualCompanyPositions'
-  };
-  const filter = f ? `(where:{column:NAME, operator:LIKE, value:"${f}"})` : '';
-  let query = `{ ${reqType[type]} ${filter} {data {id name}}}`; 
-  let response = await fetch('https://imperiasexa.ru/api.php?query='+query);
-  response = await response.json();
-  return response.data[(reqType[type])].data;
+    const reqType = {
+        сompanyRelations: 'applicantIndividualCompanyRelations',
+        сompanyPositions: 'applicantIndividualCompanyPositions'
+    };
+    const filter = f ? `(where:{column:NAME, operator:LIKE, value:"${f}"})` : '';
+    const query = `{ ${reqType[type]} ${filter} {data {id name}}}`; 
+    let response = await fetch('https://imperiasexa.ru/api.php?query='+query);
+    response = await response.json();
+    return response.data[(reqType[type])].data;
 }
 
 
@@ -24,7 +24,13 @@ class App extends React.Component {
  
   constructor(props) {
       super(props);
-      this.state = {entity: '', сompanyRelations:'' ,сompanyPositions:'' , сompanyRelationsList:[], сompanyPositionsList:[]};
+      this.state = {
+        entity: '', 
+        сompanyRelations:'',
+        сompanyPositions:'', 
+        сompanyRelationsList:[], 
+        сompanyPositionsList:[]
+      };
       this.field = {
           '':[],
           'Individual':['firstName','lastName'],
