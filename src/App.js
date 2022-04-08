@@ -15,8 +15,7 @@ async function getDataFromSelltech(type, f){
   let query = `{ ${reqType[type]} ${filter} {data {id name}}}`; 
   let response = await fetch('https://imperiasexa.ru/api.php?query='+query);
   response = await response.json();
-  console.log('query', query);
-   return response.data[(reqType[type])].data;
+  return response.data[(reqType[type])].data;
 }
 
 
@@ -47,9 +46,7 @@ class App extends React.Component {
       });
   }
  
- 
   onChangeForm = (elem) => {
-      console.log(elem.name, elem.state.value);
       this.setState({[elem.name]: elem.state.value}, () => {
         switch(elem.name){
           case 'сompanyRelations': this.getCompanyPositionsList(); break; 

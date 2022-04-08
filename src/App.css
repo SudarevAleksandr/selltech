@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -10,7 +8,6 @@
   position: relative;
 }
 .CustomAutocomplete-listWrap{
-  bottom:56px;
   right: 0;
   left: 0;
   position: absolute;
@@ -18,7 +15,15 @@
   background-color: white;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.22);
 }
-
+.CustomAutocomplete-listWrap ul{
+  padding: 15px 15px;
+}
+.CustomAutocomplete-listWrap-up{
+  bottom:56px;
+}
+.CustomAutocomplete-listWrap-down{
+  top:56px;
+}
 .CustomAutocomplete-footer{
   padding: 15px 25px;
   background-color: white;
@@ -31,17 +36,35 @@
   height: 25px;
   padding: 4px;
   cursor: pointer;
-  position: absolute;
-  right: 23px;
 }
 .deleteButton:hover{
   background-color: #e2e2e2;
 }
-
+.CustomAutocomplete-listWrap-deleteButton{
+  position: absolute;
+  right: 5px;
+}
+.CustomAutocomplete:hover .CustomAutocomplete-clearButton{
+  display: block;
+}
+.CustomAutocomplete-clearButton-none{
+  display: none !important;
+}
+.CustomAutocomplete-clearButton{
+  display: none;
+  position: absolute;
+  right: 23px;
+  top:16px
+}
+#root {
+  margin: 0;
+  padding: 50px 0 0 0;
+}
 
 .formWrap {
-  width: 500px;
+  max-width: 500px;
   padding: 40px;
+  margin: auto;
 }
 
 @media (prefers-reduced-motion: no-preference) {
